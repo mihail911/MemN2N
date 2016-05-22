@@ -1,10 +1,10 @@
 #!/bin/bash
 
-tasks="1 2 3 4 5 6 9 10 11 12 13 14 15 16 17 18 20"
+tasks="1 "
 time for task in $tasks; do
   echo "running task: $task"
-  for run in {1..10}; do
-    python -u main.py --task $task > results/${task}_${run}.txt 2>/dev/null &
+  for run in {1..5}; do
+    python -u main.py --task $task > results/${task}_${run}.txt &
   done
   wait
 done
